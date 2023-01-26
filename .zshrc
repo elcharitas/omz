@@ -107,6 +107,7 @@ function open-app(){
    open -na $1 --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security
 }
 
-function ugc() {
+# undo last commit. 
+function grhs() {
    git reset --soft HEAD~
 }
