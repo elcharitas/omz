@@ -111,3 +111,9 @@ function open-app(){
 function grhs() {
    git reset --soft HEAD~
 }
+
+# $1 - Branch to target defaults to dev
+# $2 - PR Title defaults to commit last commit in current branch
+function ghpr() {
+    gh pr create -d -B ${1:=dev} -t ${2:=$(git log --oneline -1 --pretty=%B)}
+}
