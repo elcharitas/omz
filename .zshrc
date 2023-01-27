@@ -103,8 +103,10 @@ export LANG=en_US.UTF-8
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Open an app(mac) with disabled web security.
+# works magic without necessarily needing a CORs extension.
 function open-app(){
-   open -na $1 --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security
+   open -na ${1:="Brave Browser"} --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security
 }
 
 # undo last commit. 
