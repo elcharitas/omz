@@ -111,6 +111,17 @@ function grhs() {
    git reset --soft HEAD~
 }
 
+# create a new github profile
+function mkgh(){
+   gh profile create $1;
+   mkdir ~/Workspace/$1;
+}
+
+# switch to an existing github profile
+function chgh() {
+   gh profile switch $1 --local-dir=~/Workspace/$1
+}
+
 # $1 - Branch to target defaults to dev
 # $2 - PR Title defaults to commit last commit in current branch
 function ghpr() {
